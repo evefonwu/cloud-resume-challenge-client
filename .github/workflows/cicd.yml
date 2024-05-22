@@ -8,7 +8,7 @@ on:
 env:
   GA_IAM_ROLE_ARN: "arn:aws:iam::637423565134:role/GitHubActionStack-Role-s87653b6TzDn"
   CONTENT_S3_BUCKET_NAME: "content-bucket-5134"
-  CDN_DISTRIBUTION_ID: "E3STXX99DWDVZ"
+  CDN_DISTRIBUTION_ID: "E1HH0Y4XPXS74Q"
 
 permissions:
   id-token: write
