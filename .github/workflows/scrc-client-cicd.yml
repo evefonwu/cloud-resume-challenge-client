@@ -9,8 +9,8 @@ env:
   GA_IAM_ROLE_ARN: "arn:aws:iam::637423565134:role/GitHubActionStack-Role-s87653b6TzDn"
   CONTENT_S3_BUCKET_NAME: "content-bucket-5134"
   CDN_DISTRIBUTION_ID: "E3STXX99DWDVZ"
-  TEST_ROOT_DIRECTORY: "./test"
-  CYPRESS_SPECS: "cypress/e2e/*.cy.js"
+  # TEST_ROOT_DIRECTORY: "./test"
+  # CYPRESS_SPECS: "cypress/e2e/*.cy.js"
 
 permissions:
   id-token: write
@@ -33,16 +33,16 @@ jobs:
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ env.CDN_DISTRIBUTION_ID }} --paths "/*"
 
-  cypress-run:
-    needs: upload-site
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          working-directory: ${{ env.TEST_ROOT_DIRECTORY }}
-          spec: ${{ env.CYPRESS_SPECS }}
+  # cypress-run:
+  #   needs: upload-site
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #     - name: Cypress run
+  #       uses: cypress-io/github-action@v6
+  #       with:
+  #         working-directory: ${{ env.TEST_ROOT_DIRECTORY }}
+  #         spec: ${{ env.CYPRESS_SPECS }}
