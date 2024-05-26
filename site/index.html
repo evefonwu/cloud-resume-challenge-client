@@ -9,14 +9,14 @@
   <body>
   <div>
     <h3>Visit Counter</h3>
-    <div data-cy="visits-info">#39
+    <div data-cy="visits-info">Placeholder for Count Value!
       <span id="visits" data-cy="visits-count"></span>
     </div>    
   </div>
-    <!-- Invokes API, /POST, update visit count-->
+    <!-- Invokes API and updates visit counter -->
     <script>      
       async function postIncrementVisitorCount() {
-        const apiURL = "https://2tmgp8jcog.execute-api.us-east-1.amazonaws.com/dev"
+        const apiURL = "https://ikzqum76kc.execute-api.us-east-1.amazonaws.com/dev"
         let updatedCount = ""
         try {
           const response = await fetch(apiURL, {

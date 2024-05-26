@@ -5,7 +5,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Parameters:
   ResumeBucketName:
     Type: String
-    Description: Name of the S3 bucket to store the resume site
+    Description: Name of your S3 bucket, stores site content (Must be a globally unique name)
 
   CFDistroManagedCachePolicyId:
     Type: String

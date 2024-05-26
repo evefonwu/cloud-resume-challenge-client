@@ -1,14 +1,9 @@
-name: Deploy Client Application
+name: Integrate and deploy client-side code changes
 
 on:
   push:
     branches:
       - main
-
-env:
-  GA_IAM_ROLE_ARN: "arn:aws:iam::637423565134:role/GitHubActionStack-Role-s87653b6TzDn"
-  CONTENT_S3_BUCKET_NAME: "content-bucket-5134"
-  CDN_DISTRIBUTION_ID: "E1HH0Y4XPXS74Q"
 
 permissions:
   id-token: write
@@ -23,10 +18,10 @@ jobs:
         with:
           audience: sts.amazonaws.com
           aws-region: us-east-1
-          role-to-assume: ${{ env.GA_IAM_ROLE_ARN }}
+          role-to-assume: ${{ secrets.GA_IAM_ROLE_ARN }}
       - name: Upload resume-site folder to AWS S3 Bucket
         run: |
-          aws s3 cp resume-site/ s3://${{ env.CONTENT_S3_BUCKET_NAME }}/ --recursive
+          aws s3 cp resume-site/ s3://${{ secrets.S3_BUCKET_NAME }}/ --recursive
       - name: Invalidate cache with AWS CloudFront Distribution
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ env.CDN_DISTRIBUTION_ID }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/*"
