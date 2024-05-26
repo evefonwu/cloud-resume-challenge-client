@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("My Resume Site", () => {
+describe("Visit Live Site", () => {
   beforeEach(() => {
     cy.visit("https://resume.evefonwu.com/");
   });
