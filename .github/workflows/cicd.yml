@@ -25,3 +25,17 @@ jobs:
       - name: Invalidate cache with AWS CloudFront Distribution
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/*"
+
+  cypress-run:
+    needs: upload-site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: ./test
+          spec: cypress/e2e/*.cy.js
