@@ -53,5 +53,5 @@ I built this project leveraging the following technologies and AWS services:
   - Automated CI/CD workflow with GitHub Actions
   - CloudWatch Alarms to monitoring and alerting
 
-- **_Project Article_**: ["Preparing for a Cloud Engineering Role"](https://dev.to/evefonwu/preparing-for-a-cloud-engineering-role-bof)
+- **_Project Article_**: [Preparing for a Cloud Engineering Role](https://dev.to/evefonwu/preparing-for-a-cloud-engineering-role-bof)
 - The Challenge: [Cloud Resume Challenge - AWS](https://cloudresumechallenge.dev/docs/the-challenge/aws/)
