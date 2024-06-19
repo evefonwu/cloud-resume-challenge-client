@@ -1,6 +1,6 @@
 # Cloud Resume Challenge
 
-This is the **API** of the **_Cloud Resume Challenge_**
+This is the **Client app** of the **_Cloud Resume Challenge_**
 
 UPDATE: Updated previously completed Cloud Resume Challenge to use GitHub Action Secrets instead for values such as the API URL and GitHub Action OIDC IAM Role ARN.
 
