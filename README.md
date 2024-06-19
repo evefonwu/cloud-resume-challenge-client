@@ -20,7 +20,7 @@ I built this project leveraging the following technologies and AWS services:
 - JavaScript to invokes API endpoint to effect change in the database
 - API triggers Lambda function execution
 - Lambda function updates DynamoDB view count value, returns updated count
-- Lambda function return CORS headers controlling cross-origin resource access
+- Lambda function returns CORS headers, controlling cross-origin resource access
 - Automated CI/CD workflow with GitHub Actions, integrating code changes and deploying to AWS account
 - Python smoke test from API to DynamoDB
 - Cypress E2E Test of live site
